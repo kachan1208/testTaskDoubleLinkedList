@@ -12,5 +12,6 @@ qtcAddDeployment()
 
 HEADERS += \
     doublelinkedlist.h \
-    listnode.h
+    listnode.h \
+    nodevalue.h
 

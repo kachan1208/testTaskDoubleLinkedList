@@ -5,6 +5,14 @@
 #include "listnode.h"
 
 class doubleLinkedList{
+private:
+    listNode *mFirst;
+    listNode *mLast;
+    listNode *mCurrent;
+    int mSize;
+
+    void setPointers(listNode *node);
+
 public:
     doubleLinkedList();
     ~doubleLinkedList();
@@ -13,14 +21,9 @@ public:
     void insert(double num);
     void insert(int num);
     void getAll();
+    int size();
     listNode *begin();
     listNode *end();
-
-private:
-    listNode *mFirst;
-    listNode *mLast;
-
-    void setPointers(listNode *node);
 };
 
 #endif // DOUBLELINKEDLIST_H

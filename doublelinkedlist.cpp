@@ -4,6 +4,7 @@
 doubleLinkedList::doubleLinkedList(){
     mFirst = NULL;
     mLast = NULL;
+    mSize = 0;
 }
 
 doubleLinkedList::~doubleLinkedList(){
@@ -26,31 +27,35 @@ void doubleLinkedList::insert(int num){
 }
 
 void doubleLinkedList::getAll(){
-
+    for(mCurrent = mFirst; mCurrent != mLast; mCurrent = mCurrent->next())
+        mCurrent->data();
 }
 
-listNode *doubleLinkedList::begin()
-{
+int doubleLinkedList::size(){
+    return mSize;
+}
+
+listNode *doubleLinkedList::begin(){
     return mFirst;
 }
 
-listNode *doubleLinkedList::end()
-{
+listNode *doubleLinkedList::end(){
     return mLast;
 }
 
-void doubleLinkedList::setPointers(listNode *node)
-{
+void doubleLinkedList::setPointers(listNode *node){
     if(!mFirst){
         mFirst = node;
         node->setPrevPointer(NULL);
-//        node->setNextPointer(NULL);
         mLast = node;
+        mCurrent = node;
     }
-    else
-    {
+    else{
         node->setPrevPointer(mLast);
         mLast->setNextPointer(node);
         mLast = node;
+        mCurrent = node;
     }
+
+    mSize++;
 }

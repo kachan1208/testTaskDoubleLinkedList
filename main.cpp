@@ -9,5 +9,7 @@ int main(){
     list.insert(213);
     list.insert(test);
     list.insert(321.2);
+
+    list.getAll();
 }
 
