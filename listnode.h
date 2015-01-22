@@ -21,6 +21,7 @@ public:
     void setPrevPointer(listNode *node);
     void setNextPointer(listNode *node);
     void data();
+    listNode* operator++(int);
     listNode* next();
 };
 

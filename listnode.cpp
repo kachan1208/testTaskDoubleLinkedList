@@ -19,6 +19,11 @@ void listNode::data(){
     mValue->data();
 }
 
+listNode *listNode::operator++(int){
+    *this = *mNext;
+    return mNext;
+}
+
 listNode *listNode::next(){
     return mNext;
 }
