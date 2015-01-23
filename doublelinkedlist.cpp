@@ -27,10 +27,9 @@ void doubleLinkedList::insert(int num){
 }
 
 void doubleLinkedList::getAll(){
-    for(mCurrent = mFirst; mCurrent != mLast; mCurrent = mCurrent->next()){
+    for(mCurrent = mFirst; mCurrent != 0; mCurrent = mCurrent->next()){
         mCurrent->data();
     }
-    mLast->data();
 }
 
 int doubleLinkedList::size(){
